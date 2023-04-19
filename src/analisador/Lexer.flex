@@ -11,11 +11,12 @@ WHITE=[ \t\r]
 
 %{
 public String lexeme;
-}
+%}
+%%
 {WHITE} {/*Ignore*/}
 
-/* Pula linha */
-( *\n*) {lexeme = yytext(); return LINHA;}
+/* Pular linha */
+( "\n" ) {lexeme = yytext(); return LINHA;}
 
 /* Operadores Aritméticos */
 ( "+" | "-" | "*" | "/" | "%" ) {lexeme = yytext(); return OPERADOR_ARITMETICO;}

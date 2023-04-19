@@ -6,7 +6,10 @@
 package analisador;
 
 import javax.swing.JTextArea;
-import jdk.nashorn.internal.parser.Lexer;
+import java.awt.TextArea;
+import java.io.StringReader;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,15 +19,15 @@ public class Interface extends javax.swing.JFrame {
 
     public JTextArea jText;
 
-    public void execultar() throws Exception {
+    public void execultar()throws Exception{
 
         int cont = 0;
 
         jText = textArea1; //recebe o que foi digitado
         String expr;
         //jText = textArea1;
-        expr = (String) jText.getText();
-        Lexer lexer = new Lexer(StringReader(expr));
+        expr = (String)jText.getText();
+        Lexer lexer = new Lexer(new StringReader(expr));
 
         String resultado = "";
 
@@ -45,7 +48,7 @@ public class Interface extends javax.swing.JFrame {
                     resultado = resultado + "Linha" + cont + "<Palavra_Reservada>" + lexer.lexeme + "\n";
                     break;
 
-                case OPERDOR_ARITIMETICO:
+                case OPERADOR_ARITMETICO:
 
                     resultado = resultado + "Linha" + cont + "<Operador_Aritmético>" + lexer.lexeme + "\n";
                     break;
