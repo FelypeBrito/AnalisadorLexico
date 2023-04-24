@@ -1,0 +1,43 @@
+Linguagem para configurar Switchs Cisco (Swigol)
+
+&bilbicisco
+
+inicio
+	ini_bloco $$configurar o bloco de nome
+		$$configurar o nome
+		config nome;
+		escreva Informe um nome
+		leia nome
+	fim_bloco
+
+	ini_bloco $$configurar o bloco de senha
+		$$configurar senha
+		config nome;
+		escreva Informe a senha
+		leia senha
+	fim_bloco
+	
+
+	ini_bloco $$configurar o bloco da vlan
+		$$configurar vlan
+		inteiro numero
+		config nome
+		interface num_interface
+
+		$$configura numero
+		escreva Informe o numero da vlan
+		leia numero
+		
+		$$configurar nome
+		escreva Informe o nome da vlan
+		leia nome
+
+		$$configurar interface
+		escreva Informe a interface
+		leia interface
+
+		$$definir mode de acesso
+		porta = acesso;
+	
+	fim_bloco
+fim
